@@ -1,0 +1,7 @@
+{
+  "name": "testic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
