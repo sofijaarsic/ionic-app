@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/quotes/tabs/explore">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Quote details</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-fab-button size="small" color="tertiary" (click)="onEditQuote()">
+        <ion-icon name="pencil"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button size="small" color="tertiary" (click)="onDeleteQuote()">
+        <ion-icon name="trash"></ion-icon>
+      </ion-fab-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <div class="ion-text-center" *ngIf="isLoading">
+    <ion-spinner color="primary"></ion-spinner>
+  </div>
+
+  <ion-card *ngIf="!isLoading">
+    <img [src]="quote.imageUrl" />
+    <ion-card-header>
+      <ion-card-title>{{quote.text}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{quote.author}}
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

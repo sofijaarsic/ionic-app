@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>explore</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-fab-button size="small" color="tertiary" (click)="openModal()">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <app-quote-element
+      *ngFor="let quote of quotes"
+      [quote]="quote"
+      [routerLink]="['/','quotes','tabs','explore', quote.id]"
+    ></app-quote-element>
+  </ion-list>
+</ion-content>
